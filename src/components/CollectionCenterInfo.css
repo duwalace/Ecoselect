@@ -1,0 +1,278 @@
+/* Accessibility - visually hidden but available to screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.info-panel {
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  width: 350px;
+  max-height: calc(100vh - 100px);
+  background: var(--bg-primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow-strong);
+  overflow-y: auto;
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+}
+
+.info-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.info-content {
+  padding: 20px;
+}
+
+.distance-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.distance-icon {
+  font-size: 1.2rem;
+}
+
+.info-section {
+  margin-bottom: 24px;
+}
+
+.info-section h3 {
+  font-size: 1.1rem;
+  margin: 0 0 12px 0;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.info-section p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hours-item {
+  padding: 10px;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+  border-left: 3px solid var(--primary);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.materials-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.material-tag {
+  background: #3498db;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.contact-link {
+  color: #2ecc71;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+  border-bottom: 1px solid transparent;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  color: #27ae60;
+  border-bottom-color: #27ae60;
+  outline: none;
+}
+
+.contact-link:focus-visible {
+  outline: 2px solid #2ecc71;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+  .info-panel {
+    width: 320px;
+    right: 10px;
+    top: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-panel {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    max-height: 70vh;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .info-header {
+    padding: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .info-header h2 {
+    font-size: 1.2rem;
+    max-width: calc(100% - 50px);
+  }
+
+  .info-content {
+    padding: 16px;
+  }
+
+  .distance-badge {
+    font-size: 0.9rem;
+    padding: 6px 14px;
+  }
+
+  .info-section h3 {
+    font-size: 1rem;
+  }
+
+  .hours-item {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .material-tag {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-panel {
+    max-height: 75vh;
+  }
+
+  .info-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .close-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .info-content {
+    padding: 14px;
+  }
+
+  .distance-badge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+
+  .info-section {
+    margin-bottom: 20px;
+  }
+
+  .info-section h3 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+
+  .hours-item {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .material-tag {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .info-header h2 {
+    font-size: 1rem;
+  }
+
+  .distance-badge {
+    font-size: 0.8rem;
+  }
+
+  .info-section h3 {
+    font-size: 0.9rem;
+  }
+}
