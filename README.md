@@ -84,23 +84,27 @@ git clone https://github.com/duwalace/Ecoselect.git
 cd Ecoselect
 ```
 
-2. **Instale as dependências do Frontend**
+2. **Instale as dependências do Frontend (na raiz do projeto)**
 ```bash
 npm install
 ```
+⚠️ **Importante:** Isso instala as dependências do React, Vite, Leaflet, etc.
 
-3. **Instale as dependências do Backend**
+3. **Instale as dependências do Backend (pasta server)**
 ```bash
 cd server
 npm install
 cd ..
 ```
+⚠️ **Importante:** O backend tem seu próprio `package.json` com Express, CORS, etc.
 
 4. **Configure as variáveis de ambiente (opcional)**
 ```bash
 # Crie um arquivo .env na raiz do projeto (se necessário)
 VITE_API_URL=http://localhost:3001/api
 ```
+
+> 💡 **Dica:** Você precisa rodar `npm install` em AMBOS os lugares (raiz E server) pois são dois projetos Node.js separados!
 
 ---
 
